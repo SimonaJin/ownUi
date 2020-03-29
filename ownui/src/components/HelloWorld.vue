@@ -110,7 +110,7 @@ h3
 
 ul
   list-style-type none
-  padding 0
+  padding 0np
 
 li
   display inline-block
