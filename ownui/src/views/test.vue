@@ -1,11 +1,14 @@
 <template>
-  <div>home</div>
+    <div>
+        test
+    </div>
 </template>
 <script>
 export default {
-  name:'Home'
+    name:'Test'
 
 };
 </script>
 <style lang="stylus">
+
 </style>

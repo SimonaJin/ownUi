@@ -13,8 +13,27 @@ baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
      你可以通过将这个选项设为 false 来关闭文件名哈希。(false的时候就是让原来的文件名不改变) */
     filenameHashing: false,
     /* 代码保存时进行eslint检测 */
-    lintOnSave: true,
+    lintOnSave: false,
     indexPath: 'index.html',
+    //构建多页面的应用，页面的配置
+    pages:{
+        index:{
+            entry:'src/main.js',
+            // 模板来源
+            template: 'public/index.html',
+            // 在 dist/index.html 的输出
+            filename:"index.html",
+            title:'Index page',
+             // 提取出来的通用 chunk 和 vendor chunk。
+            chunk:['chunk-vendors','chunk-common','index']
+        }
+    },
+    css: {
+       // extract: true,// 是否使用css分离插件 ExtractTextPlugin
+        sourceMap: false,// 开启 CSS source maps
+        oaderOptions: {stylus},// css预设器配置项
+        modules: false// 启用 CSS modules for all css / pre-processor files.
+    },
     /* webpack-dev-server 相关配置 */
     devServer:{
         /* 自动打开浏览器 */
