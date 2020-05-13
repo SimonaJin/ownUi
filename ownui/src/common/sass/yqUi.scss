@@ -1,0 +1,42 @@
+@import './base.scss';
+@import './mixin';
+//----------------- form表单
+.yq-form{
+    padding: 2%;
+    .yq-form-item{
+        position: relative;
+        p{
+            font-size: $fz12;
+            color: $danger-color;
+            text-align: left;
+            padding-left: 10px;
+            line-height: $fz18;
+            position: absolute;
+            bottom: -18px;
+        }
+    }
+    .item-box{
+        border-bottom: 1px solid $border-color;
+        line-height: 38px;
+        display: flex;
+        padding-left: 5px;
+        margin-bottom: 13px;
+        label{
+            font-size: $fz14;
+            color: $text-color;
+            padding-right: 5px;
+            flex: 0 0 80px;
+            text-align: left;
+        }
+        .yq-form-input{
+            width: 100%;
+        }
+    }
+    .noborBotton{
+        .item-box{
+            border:none;
+        }
+       
+    }
+
+}

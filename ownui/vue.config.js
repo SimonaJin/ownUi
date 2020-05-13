@@ -1,8 +1,14 @@
+const path = require('path')
+const webpack = require('webpack')
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 module.exports = {
 /* 部署生产环境和开发环境下的URL：可对当前环境进行区分，
 baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */ 
     /* baseUrl: process.env.NODE_ENV === 'production' ? './' : '/' */
-    publicPath: process.env.NODE_ENV === 'production' ? './public/' : './',
+    publicPath: process.env.NODE_ENV === 'production' ? './' : './',
     /* 输出文件目录：在npm run build时，生成文件的目录名称 */
     outputDir: 'dist',
     /* 放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录 */
@@ -29,10 +35,37 @@ baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
         }
     },
     css: {
-       // extract: true,// 是否使用css分离插件 ExtractTextPlugin
+        //extract: true,// 是否使用css分离插件 ExtractTextPlugin
         sourceMap: false,// 开启 CSS source maps
-        oaderOptions: {stylus},// css预设器配置项
-        modules: false// 启用 CSS modules for all css / pre-processor files.
+        //oaderOptions: {},// css预设器配置项
+        // 启用 CSS modules for all css / pre-processor files.
+        requireModuleExtension: true,
+    
+    },
+    chainWebpack:(config)=>{
+        config.resolve.alias
+        .set('@',resolve('./src'))
+        .set('components',resolve('./src/components'))
+        .set('views',resolve('src/views'))
+        .set('common',resolve('src/common'))
+        .set('scss',resolve('src/common/sass'))
+        .set('js',resolve('src/common/js'))
+        //set第一个参数：设置的别名，第二个参数：设置的路径
+　　　　
+    },
+    configureWebpack: (config) => {
+        if (process.env.VUE_APP_MODE === 'production') {
+            // 为生产环境修改配置...
+            config.mode = 'production'
+        } else {
+            // 为开发环境修改配置...
+            config.mode = 'development'
+        }
+        // config.module.rules.push({
+        //     use:[{
+        //         loader:'sass-loader'
+        //     }]
+        // })
     },
     /* webpack-dev-server 相关配置 */
     devServer:{
