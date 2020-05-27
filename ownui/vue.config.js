@@ -43,13 +43,14 @@ baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
     
     },
     chainWebpack:(config)=>{
-        config.resolve.alias
+        config.resolve.symlinks(true); // 修复热更新失效
+        config.resolve.alias // 添加别名
         .set('@',resolve('./src'))
         .set('components',resolve('./src/components'))
-        .set('views',resolve('src/views'))
-        .set('common',resolve('src/common'))
-        .set('scss',resolve('src/common/sass'))
-        .set('js',resolve('src/common/js'))
+        .set('views',resolve('./src/views'))
+        .set('common',resolve('./src/common'))
+        .set('scss',resolve('./src/common/sass'))
+        .set('js',resolve('./src/common/js'))
         //set第一个参数：设置的别名，第二个参数：设置的路径
 　　　　
     },
@@ -73,7 +74,7 @@ baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
         open: true,
         /* 设置为0.0.0.0则所有的地址均能访问 */
         host: 'localhost',
-        port: 8066,
+        port: 3000,
         https: false,
         hotOnly: false,
          /* 使用代理 */

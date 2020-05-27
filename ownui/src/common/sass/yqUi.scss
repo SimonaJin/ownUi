@@ -36,7 +36,47 @@
         .item-box{
             border:none;
         }
-       
     }
 
+}
+//-----------------  alert
+.yq-alert{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .message-alert{
+        position: absolute;
+        top:5%;
+        padding: 10px;
+    
+        display: flex;
+        align-items: center;
+        z-index: 10002;
+        background: #ccc;
+        opacity: 0;
+        @include border-radius(6px);
+        .alert-icon{
+            width: 30px;
+            height: 30px;
+            flex: 0 0 30px;
+            color: $white-color;
+            line-height: 30px;
+            text-align: center;
+            
+        }
+        .text{
+            margin-left: 5px;
+            color: $white-color;
+        }
+
+    }
+    .yq-alert-success{
+        background: $main-color;
+    }
+    .yq-alert-warning{
+        background: $assist-color;
+    }
+    .yq-alert-danger{
+        background: $danger-color;
+    }
 }

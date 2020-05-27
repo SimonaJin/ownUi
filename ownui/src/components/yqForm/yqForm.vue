@@ -22,11 +22,18 @@ export default {
             yqForm:this
         }
     },
+    data() {
+        return {
+            fields: [],
+        }
+    },
     methods: {
         async validate(cb){
+            
              // 需要看一下内部的elformItem 是否都通过了校验
             // 获取所有的子组件
             let children = this.$broadcast('yqFormItem'); // 获取所有子元素
+
             try{
                 await Promise.all(children.map(child=>child.validate()));
                 cb(true)

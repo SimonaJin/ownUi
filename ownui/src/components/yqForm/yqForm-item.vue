@@ -1,5 +1,5 @@
 <template>
-<div class="yq-form-item">
+<div class="yq-form-item" >
     <div class="item-box">
         <label v-if="label">{{label}}</label>
         <slot></slot>
@@ -36,6 +36,15 @@ export default {
                 //获取验证
                 let value = this.yqForm.model[this.prop];
                 let rules = this.yqForm.rules[this.prop];
+
+                // console.log(rules)
+                // if(rules[0].trigger && rules[0].trigger=="blur"){
+                //     let inputItem = document.querySelector('.yq-form-item');
+                //     rules[0].validate();
+                //     //this.formblur()
+                // }
+                
+                // 普通验证
                 let schema = new Schema({
                     [this.prop]: rules // username:rule
                 }); 
@@ -49,6 +58,10 @@ export default {
                     }
                 })
             }
+        },
+        formblur(validate,cb){
+            console.log(validate)
+           // cb(validate) 
         }
     },
 };

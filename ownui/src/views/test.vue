@@ -61,9 +61,9 @@ export default {
 </script>
 <style lang="stylus">
 h3{
-    margin 0px;
+    margin 0px
     padding 5px
-    background-color #E0E0E0;
+    background-color #E0E0E0
 }
 .line{
     

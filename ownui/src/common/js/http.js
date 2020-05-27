@@ -21,7 +21,6 @@ axios.interceptors.response.use(res => {
         sessionStorage.clear();
         localStorage.clear();
         //异常提示
-
         //跳转至登录页
         router.push({name:'login'})
     }else{
@@ -48,9 +47,9 @@ axios.interceptors.response.use(res => {
 })
 export default axios;
 //axios请求封装
-function get(){
+function get(url,params){
     return new Promise(function(resolve, reject) {
-        axios.get("http://127.0.0.1:5500/api/img").then(res => {
+        axios.get(url,{params:params}).then(res => {
             resolve(res);
         }).catch(err => {
             reject(err);

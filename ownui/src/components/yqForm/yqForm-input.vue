@@ -1,5 +1,9 @@
 <template>
-    <input :type="type" :placeholder="placeholder" class="yq-form-input" :value="value" @input="handleInptu">
+<!--  @blur="handleInptu" -->
+    <input :type="type" :placeholder="placeholder" 
+    class="yq-form-input" :value="value" 
+    @input="handleInptu"
+    >
 </template>
 <script>
 
