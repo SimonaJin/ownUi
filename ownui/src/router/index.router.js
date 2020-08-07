@@ -2,11 +2,11 @@ export default[
     {
         path: '/',
         redirect: '/home',
-        component: ()=> import(/*webpackChunkName:'home'*/'views/home.vue')
+        component: ()=> import(/*webpackChunkName:'home'*/'views/Home.vue')
     },
     {
         path:'/home',
-        component:()=> import(/*webpackChunkName:'home'*/'views/home.vue')
+        component:()=> import(/*webpackChunkName:'home'*/'views/Home.vue')
     },
     {
         path:'*',
