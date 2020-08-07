@@ -18,13 +18,13 @@ Vue.prototype.$broadcast= broadcast;
 
 
 //VueLazyload
-var url= window.location.host;
-var port =window.location.port;
-const loading = `http://${url}:${port}/image/loading.gif`
-Vue.use(VueLazyload,{
-  preLoad:1.3, // 默认窗口的 1.3倍
-  loading
-})
+// var url= window.location.host;
+// var port =window.location.port;
+// const loading = `http://${url}:${port}/image/loading.gif`
+// Vue.use(VueLazyload,{
+//   preLoad:1.3, // 默认窗口的 1.3倍
+//   loading
+// })
 Vue.use(vAlert)
 new Vue({
   router,

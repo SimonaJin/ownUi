@@ -5,9 +5,9 @@
     <p>小王年龄{{$store.getters.getAge}}</p>
     <button @click="$store.commit('changeAge', 5)">同步更新</button>
     <button @click="$store.dispatch('changeAge', 5)">异步更新</button>
-    <ul>
+    <!-- <ul>
       <li  v-for="(item,index) in sliders" :key="index"><img :src="item" alt=""></li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 <script>
@@ -17,7 +17,7 @@ export default {
   name:'Home',
   components:{},
   computed: {
-    ...mapState(['sliders'])
+    //...mapState(['sliders'])
   },
   data() {
     return {
@@ -25,12 +25,12 @@ export default {
     };
   },
   mounted() { 
-    if(!this.sliders.length){
-      this[types.SET_SLIDERS]();
-    }
+    // if(!this.sliders.length){
+    //   this[types.SET_SLIDERS]();
+    // }
   },
   methods: {
-    ...mapActions([types.SET_SLIDERS])
+    //...mapActions([types.SET_SLIDERS])
   }
 
 };

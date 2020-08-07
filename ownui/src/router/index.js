@@ -11,7 +11,7 @@ files.keys().forEach(key => {
   routes.push(...files(key).default)
 });
 const router = new VueRouter({
-  mode:'history',
+  // mode:'history',
   routes
 });
 
