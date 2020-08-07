@@ -1,13 +1,11 @@
 import config from '../config/index';
 import axios from 'axios';
-
 class HttpRequest{
     constructor(){
         this.baseURL = config.baseURL;
         this.timeout = 3000
     }
     setInterceptors(instance){
-        
         //请求拦截
         instance.interceptors.request.use(config=>{
             return config;
@@ -15,7 +13,6 @@ class HttpRequest{
         //响应拦截
         instance.interceptors.response.use(res=>{
             if(res.status == 200){
-        
                 return Promise.resolve(res.data)
             }else{
                 return Promise.reject(res.data.data)

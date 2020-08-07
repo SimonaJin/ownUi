@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 const routes = [];
 //获取文件 
 const files = require.context('./',false,/\.router.js$/);
+
 files.keys().forEach(key => {
   routes.push(...files(key).default)
 });

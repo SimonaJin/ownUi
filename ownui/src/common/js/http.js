@@ -56,3 +56,9 @@ function get(url,params){
         });
     });
 }
+
+export const http ={
+    get: function(url,data){
+        return get(url,data)
+    }
+}
