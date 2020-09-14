@@ -1,8 +1,8 @@
-const path = require('path')
-const webpack = require('webpack')
+const path = require('path');
+const webpack = require('webpack');
 
 function resolve(dir) {
-  return path.join(__dirname, dir)
+    return path.join(__dirname, dir);
 }
 module.exports = {
 /* 部署生产环境和开发环境下的URL：可对当前环境进行区分，
@@ -88,9 +88,5 @@ baseUrl 从 Vue CLI 3.3 起已弃用，要使用publicPath */
                 changeOrigin: true,
             },
         },
-    },
-    // 第三方插件配置
-    pluginOptions: {
-        // ...
     }
 }

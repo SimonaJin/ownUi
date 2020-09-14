@@ -4,6 +4,7 @@ import App from "./App.vue";
 import router from "./router";
 import store from './store'
 import './common/sass/index.scss';// 样式重置
+
 import {dispath,broadcast}from 'js/ui/emitter.js'
 
 // 组件引入

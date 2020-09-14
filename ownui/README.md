@@ -20,8 +20,25 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 文档分类布局
+- public 模板文件index
+- src-> api 请求接口url
+- src-> assets 静态资源 images fonts
+- src-> common 公共js+css+sass
+- src-> components 公共组件
+- src-> config 请求路径
+- src-> router 路由
+- src-> store vuex
+- src-> utils js工具函数
+- src-> views 页面
+- app.vue 
+- main.js 
+- serverApi node 服务
+- test 自动化测试
+- Dockerfile 镜像文件配置
+- jest.config.js 自动化测试配置文件
+- nginx.conf  nginx配置文件
+- vue.config.js  vue-webpack配置文件
 
 ## 自动化测试
 - 每次写完代码提交后可以实现自动测试,测试代码是否能通过测试
@@ -51,4 +68,5 @@ Todo => TodoInput TodoList TodoItem
 ## 测试覆盖率
 - 覆盖率 是一个衡量的标准 但是不是越高越好 单元测试的覆盖率比较高
 - 集成测试 覆盖率比较低
+
 

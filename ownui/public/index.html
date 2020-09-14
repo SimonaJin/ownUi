@@ -2,8 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <!-- 优先使用 IE 最新版本和 Chrome -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- 设置viewport -->
+      <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+      <!-- 添加到主屏幕“，全屏显示 -->
+      <meta name="apple-touch-fullscreen" content="yes" > 
+      <!-- 删除默认的苹果工具栏和菜单栏。 -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <!-- ios设备上禁止默认的将数字识别为可点击的telephone link -->   
+      <meta name="format-detection" content="telephone=no">   
+      <!-- 网页关键字声明（搜索引擎优化地方） -->
+      <meta name="keywords" content="abc,xxx,defg,xyz" /> 
+      <!-- 网页简介说明（搜索引擎优化地方） -->
+      <meta name="description" content="简介内容如本页div+css教程之meta标签说明-www.divcss5.com" />
+      <!-- 防止别人在框架里调用你的页面 -->
+      <meta http-equiv="Window-target" content="_top" />
+      <!-- 禁止数字识自动别为电话号码\地址\日期\电子邮件  -->
+      <meta name =“format-detection” content =“telephone=no,address=no,date=no,email=no”>
+ 
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     
