@@ -10,17 +10,15 @@
       <meta name="apple-touch-fullscreen" content="yes" > 
       <!-- 删除默认的苹果工具栏和菜单栏。 -->
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <!-- ios设备上禁止默认的将数字识别为可点击的telephone link -->   
-      <meta name="format-detection" content="telephone=no">   
+      <!-- ios设备上禁止默认的将数字识别为可点击的telephone 禁止数字识自动别为电话号码\地址\日期\电子邮件  -->   
+      <meta name="format-detection" content="telephone=no,address=no,date=no,email=no">   
       <!-- 网页关键字声明（搜索引擎优化地方） -->
       <meta name="keywords" content="abc,xxx,defg,xyz" /> 
       <!-- 网页简介说明（搜索引擎优化地方） -->
       <meta name="description" content="简介内容如本页div+css教程之meta标签说明-www.divcss5.com" />
       <!-- 防止别人在框架里调用你的页面 -->
       <meta http-equiv="Window-target" content="_top" />
-      <!-- 禁止数字识自动别为电话号码\地址\日期\电子邮件  -->
-    
- 
+
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
     
