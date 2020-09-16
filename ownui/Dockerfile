@@ -1,4 +1,4 @@
-FROM nginx
+FROM registry.cn-hangzhou.aliyuncs.com/jenkinsdocker/docker1
 # 定义作者
 MAINTAINER jin
 # 将dist文件中的内容复制到 /usr/share/nginx/html/ 这个目录下面
