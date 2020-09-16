@@ -1,0 +1,15 @@
+//字体
+$font-basic:18px;
+$desk-width:1440;
+$mobil-width:375;
+$vw-basic:100vw;
+
+@function px2rem($px){
+    @return $px / $baseFontSize * 1rem;
+}
+@function desk_ww($px){
+    @return $px / $desk-width * $vw-basic;
+}
+@function mb_ww($px){
+    @return $px / $mobil-width * $vw-basic;
+}

@@ -1,0 +1,26 @@
+$mobil-width:768px;
+$middle-width:992px;
+$desktop-width:1200px;
+// <768
+@mixin mobile-device {
+    @media screen and (max-width: #{$mobil-width}){
+        @content;
+    }
+}
+// 769—992
+@mixin middle-device {
+    @media (min-width: #{$mobil-width + 1px}) and (max-width: #{$middle-width}){
+        @content;
+    }
+}
+// >992
+@mixin desktop-device {
+    @media screen and (min-width: #{desktop-width + 1px}){
+        @content;
+    }
+}
+
+
+
+
+
