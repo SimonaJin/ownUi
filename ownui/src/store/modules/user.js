@@ -1,5 +1,5 @@
-export default{
-    state:{
-        ueser:'jin'
-    }
-}
+export default {
+  state: {
+    ueser: "jin"
+  }
+};

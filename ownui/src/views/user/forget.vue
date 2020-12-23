@@ -1,5 +1,5 @@
 <template>
-    <div>
-        forget
-    </div>
+  <div>
+    forget
+  </div>
 </template>

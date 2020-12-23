@@ -8,9 +8,8 @@
   </div>
 </template>
 <script>
-
 export default {
-  name: "tab",
+  name: "test",
   data() {
     return {
       imgs: []
@@ -21,7 +20,7 @@ export default {
     this.demo();
   },
   methods: {
-     demo:async function(){
+    demo: async function() {
       try {
         let res = await this.getImg();
         this.imgs = res.data;
@@ -32,9 +31,12 @@ export default {
     },
     get() {
       return new Promise(function(resolve, reject) {
-        axios.get("http://127.0.0.1:5500/api/img").then(res => {
+        axios
+          .get("http://127.0.0.1:5500/api/img")
+          .then(res => {
             resolve(res);
-          }).catch(err => {
+          })
+          .catch(err => {
             reject(err);
           });
       });

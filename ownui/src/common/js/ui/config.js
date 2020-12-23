@@ -1,7 +1,14 @@
-const iconType={
-    defaults:'defaults',
-    success:'success',
-    warning:'warning',
-    danger:'danger'
-}
-export{iconType};
+const iconType = {
+	defaults: "defaults",
+	primary: "primary",
+	success: "success",
+	warning: "warning",
+	danger: "danger"
+};
+const buttonSizeMap = {
+	large: "large",
+	normal: "normal",
+	small: "small",
+	mini: "mini"
+};
+export { iconType, buttonSizeMap };

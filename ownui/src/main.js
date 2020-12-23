@@ -1,22 +1,21 @@
-import 'babel-polyfill';
+import "babel-polyfill";
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from './store'
-import './common/sass/index.scss';// 样式重置
+import store from "./store";
+import "./common/sass/index.scss"; // 样式重置
 
-import {dispath,broadcast}from 'js/ui/emitter.js'
+import gl_component from "common/js/ui/globalComponent";
+import { dispath, broadcast } from "js/ui/emitter.js";
 
 // 组件引入
-import VueLazyload from './common/js/lazyLoad'
-import vAlert from 'components/alert/index'
+import VueLazyload from "./common/js/lazyLoad";
+import vAlert from "components/alert/index";
 
 Vue.config.productionTip = false;
 
-Vue.prototype.$dispath= dispath;
-Vue.prototype.$broadcast= broadcast;
-
-
+Vue.prototype.$dispath = dispath;
+Vue.prototype.$broadcast = broadcast;
 
 //VueLazyload
 // var url= window.location.host;
@@ -26,7 +25,9 @@ Vue.prototype.$broadcast= broadcast;
 //   preLoad:1.3, // 默认窗口的 1.3倍
 //   loading
 // })
-Vue.use(vAlert)
+Vue.use(vAlert);
+Vue.use(gl_component);
+
 new Vue({
   router,
   store,
