@@ -166,3 +166,47 @@
 	align-items: center;
 	justify-content: center;
 }
+
+//----------------------- loading
+.mask{
+	top:0;
+	left:0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: transparent;
+}
+.yq-loading{
+	position: fixed;
+	background-color: rgba(0,0,0,0.7);
+	top: 42%;
+	left:35%;
+	width: 30%;
+	padding:21px 10px 8px;
+	@include border-radius(8px);
+	z-index:999;
+	p{
+		text-align: center;
+		color: $white-color;
+		line-height: 30px;
+	}
+}
+.yq-spinner{
+	@include center;
+	.yq-spinner-snake{
+		animation: spinner-rotate .8s infinite linear;
+		border: 4px solid transparent;
+		@include border-radius(50%);
+	}
+}
+@-webkit-keyframes spinner-rotate{
+	0%{
+		transform: rotate(0deg);
+		-webkit-transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(1turn);
+		-webkit-transform: rotate(1turn);
+	}
+}

@@ -59,7 +59,7 @@ class alertMsg {
   }
 }
 //挂载alert方法
-export function initType(Vue) {
+export default function initAlert(Vue) {
   //挂载到原型上 暴露4个方法
   let vm = Vue;
   let alertProtype = (vm.prototype.$alert = {});

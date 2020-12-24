@@ -11,6 +11,7 @@
       :value="value"
       @input="handleInptu"
       @click="handleClick"
+      @change="handleChange"
     />
 
     <!-- 文本框 -->
@@ -21,8 +22,10 @@
       :value="value"
       :maxlength="maxlength"
       :minlength="minlength"
+      :readonly="readonly"
       :placeholder="placeholder"
       @click="handleClick"
+      @change="handleChange"
     >
     </textarea>
   </div>
@@ -33,40 +36,40 @@ export default {
   props: {
     type: {
       type: String,
-      default: "text"
+      default: "text",
     },
     placeholder: {
       type: String,
-      default: ""
+      default: "",
     },
     maxlength: {
-      type: String
+      type: String,
     },
     minlength: {
-      type: String
+      type: String,
     },
     readonly: {
       type: Boolean,
-      default: false
+      default: false,
     },
-    value: String
+    value: String,
   },
   data() {
     return {
-      result: ""
+      result: "",
     };
   },
   methods: {
     handleInptu(e) {
       //双向绑定数据
       let data = e.target.value;
-      let newData = data;
+
       if (this.type === "number" && this.maxlength) {
         if (data.length > Number(this.maxlength)) {
-          newData = data.substr(0, this.maxlength);
+          data = data.substr(0, this.maxlength);
+          e.target.value = data;
         }
       }
-      e.target.value = newData;
       this.$emit("input", e.target.value);
 
       // 校验 $parent指向不明确 广播上一层需要更改
@@ -74,8 +77,11 @@ export default {
     },
     handleClick(event) {
       this.$emit("click", event);
-    }
-  }
+    },
+    handleChange(event) {
+      this.$emit("change", event);
+    },
+  },
 };
 </script>
 <style lang="scss"></style>

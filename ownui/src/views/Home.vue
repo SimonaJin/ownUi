@@ -3,12 +3,10 @@
     <h3>表单</h3>
     <yq-form :rules="rules" :model="yqForm" ref="yqForm">
       <yq-form-item label="用户名" prop="username">
-        <!--  -->
+        <!--@click="test"  :readonly="isReadonly"-->
         <yq-form-input
           v-model="yqForm.username"
           placeholder="请输入用户名"
-          :readonly="isReadonly"
-          @click="test"
         ></yq-form-input>
       </yq-form-item>
       <yq-form-item label="手机号" prop="password">
@@ -80,21 +78,29 @@ export default {
   },
   mounted() {},
   methods: {
-		//表单提交
+    //表单提交
     submitForm(formName) {
-      this.$refs[formName].validate((valid) => {
+      this.$refs[formName].validate(valid => {
+			
         if (valid) {
-          alert("submit!");
+					let self = this
+					this.$loading.open({text:'加载中'});
+					setTimeout(()=>{
+						self.$loading.close()
+					},2000)
         } else {
           console.log("error submit!!");
-          return false;
         }
       });
-		},
-		//alert
-		handleAlert(){
-			this.$alert.warning("alert")
-		}
+    },
+    test(){
+      this.$alert.danger("form");
+    },
+    //alert
+    handleAlert() {
+
+      this.$alert.warning("alert");
+    },
   },
 };
 </script>

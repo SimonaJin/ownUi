@@ -11,4 +11,7 @@ const buttonSizeMap = {
 	small: "small",
 	mini: "mini"
 };
-export { iconType, buttonSizeMap };
+const loadingType = {
+	snake: "snake"
+}
+export { iconType, buttonSizeMap, loadingType };
