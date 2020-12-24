@@ -32,6 +32,21 @@
 			<yq-button type="warning" size="normal" @click="handleAlert">drange 点击alert组件</yq-button>
 			<yq-button type="drange" size="small">small</yq-button>
 			<yq-button type="defaults" size="mini" plain>mini</yq-button>
+		<h3>badge</h3>
+		<div class="ovHidden">
+		<div class="badgeBox">
+				<yq-badge badge="9"></yq-badge>	
+			</div>
+			<div class="badgeBox">
+				<yq-badge badge="99+"></yq-badge>
+			</div>
+		</div>
+	
+		<h3>icon</h3>
+			<yq-icon name="set"></yq-icon>
+			<yq-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png"></yq-icon>
+			<yq-icon name="edit" color="02C497" size="3rem"></yq-icon>
+			<yq-icon name="comments" color="02C497" badge="99+"></yq-icon>
 		<h3>tab切换</h3>
     <div>
       <tab-nav :currIndex="currIndex" type="default">
@@ -104,6 +119,20 @@ export default {
   },
 };
 </script>
-<style lang="sass" scoped>
-h3{margin: 12px 0}
+<style lang="scss" scoped>
+h3{
+	margin: 12px 0;
+	}
+.badgeBox{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	background:#ccc;
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	}
+.ovHidden{
+	overflow: hidden;
+}
 </style>
