@@ -19,7 +19,6 @@ export const Loadingbox = {
       Vue = window.Vue;
     }
     Vue.component("Loading", Loading); //生成一个组件
-    //挂载到原型上 暴露4个方法
     initLoading(Vue);
   }
 };

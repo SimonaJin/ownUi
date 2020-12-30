@@ -35,11 +35,7 @@ export default {
   created() {
     // 地址正则判断
     let reg = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+$/g;
-    if (reg.test(this.name)) {
-      this.imgShow = true;
-    } else {
-      this.imgShow = false;
-    }
+    if (reg.test(this.name)) this.imgShow = true;
     this.iconName = this.name;
   },
 };

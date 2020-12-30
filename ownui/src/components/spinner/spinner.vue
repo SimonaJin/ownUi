@@ -6,7 +6,6 @@
         borderTopColor: color,
         borderBottomColor: color,
         borderLeftColor: color,
-        borderRightColor: color,
         width: size + 'px',
         height: size + 'px',
       }"
@@ -16,7 +15,7 @@
 <script>
 import { loadingType } from "js/ui/config.js";
 export default {
-  name: "spinner",
+  name: "yqSpinner",
   props: {
     type: {
       default: loadingType.snake,

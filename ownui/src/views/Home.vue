@@ -47,6 +47,23 @@
 			<yq-icon name="https://b.yzcdn.cn/vant/icon-demo-1126.png"></yq-icon>
 			<yq-icon name="edit" color="02C497" size="3rem"></yq-icon>
 			<yq-icon name="comments" color="02C497" badge="99+"></yq-icon>
+
+		<h3>image</h3>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg"></yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" :showRound=true></yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" radius="12px"></yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" :showLoading=true></yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" :showLoading=true>
+			<template v-slot:loading>
+				<yq-spinner type="snake" color="rgb(2, 196, 151)" size="30"></yq-spinner>
+			</template>
+		</yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" :showError=true></yq-image>
+		<yq-image src="https://img.yzcdn.cn/vant/cat.jpeg" :showError=true>
+			<template v-slot:error>
+				加载失败
+			</template>
+		</yq-image>
 		<h3>tab切换</h3>
     <div>
       <tab-nav :currIndex="currIndex" type="default">
@@ -58,6 +75,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: "Home",
   computed: {},
@@ -91,7 +109,9 @@ export default {
       },
     };
   },
-  mounted() {},
+  mounted() {
+
+	},
   methods: {
     //表单提交
     submitForm(formName) {
@@ -99,7 +119,9 @@ export default {
 			
         if (valid) {
 					let self = this
-					this.$loading.open({text:'加载中'});
+					this.$loading.open({
+						text:"加载中。。。"
+					})
 					setTimeout(()=>{
 						self.$loading.close()
 					},2000)

@@ -6,10 +6,8 @@
   </div>
 </template>
 <script>
-import YqSpinner from "./spinner";
 export default {
   name: "loading",
-  components: { YqSpinner },
   props: {
     show: {
       type: Boolean,
