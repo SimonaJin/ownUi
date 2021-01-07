@@ -6,11 +6,22 @@ export default [
   },
   {
     path: "/home",
-    component: () => import(/*webpackChunkName:'home'*/ "views/Home.vue")
+		component: () => import(/*webpackChunkName:'home'*/ "views/Home.vue"),
+		children:[
+			{
+				path:'/button',
+				name:'button',
+				component:() => import("components/yqButton/README.md")
+			},
+		]
+	},
+	{
+    path: "/demo-ui/button",
+    component: () => import(/*webpackChunkName:'drag'*/ "components/yqButton/demo/index.vue")
   },
   {
     path: "/drag",
-    component: () => import(/*webpackChunkName:'home'*/ "views/drag/index.vue")
+    component: () => import(/*webpackChunkName:'drag'*/ "views/drag/index.vue")
   },
   {
     path: "*",

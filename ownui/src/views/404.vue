@@ -1,5 +1,5 @@
 <template>
   <div>
-    <van-button type="primary">主要按钮</van-button>
+    404
   </div>
 </template>

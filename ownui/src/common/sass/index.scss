@@ -1,2 +1,66 @@
 @import './reset';
 @import './yqUi';
+.yq-doc-container{
+	box-sizing: border-box;
+	padding-left: 220px;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	.yq-doc-content{
+		position: relative;
+    flex: 1;
+		padding: 0 0 75px;
+		text-align: left;
+		section {
+			padding: 30px;
+			overflow: hidden;
+		}
+		h1 {
+			margin: 0 0 30px;
+			font-size: 30px;
+			cursor: default;
+		}
+		.card {
+			margin-bottom: 24px;
+			padding: 24px;
+			background-color: #fff;
+			border-radius: 12px;
+			box-shadow: 0 8px 12px #ebedf0;
+		}	
+	}
+
+}
+.yq-doc-container_simulator{
+	padding-right: 390px;
+}
+.yq-doc-simulator {
+	position: absolute;
+	top: 90px;
+	right: 30px;
+	z-index: 1;
+	box-sizing: border-box;
+	width: 360px;
+	min-width: 360px;
+	overflow: hidden;
+	background: #fafafa;
+	border-radius: 12px;
+	box-shadow: #ebedf0 0 4px 12px;
+}
+//-------------demo
+.demo-ui_section{
+	box-sizing: border-box;
+    min-height: calc(100vh);
+		padding-bottom: 20px;
+		.demo-ui_title{
+			margin: 0;
+			padding:20px 16px 16px 0px;;
+			color: rgba(69, 90, 100, 0.6);
+			font-weight: normal;
+			font-size: 14px;
+			line-height: 16px;
+			text-align: left;
+		}
+		.demo-ui_modules{
+			margin-bottom: 12px;
+		}
+}
