@@ -1,29 +1,33 @@
 //放置工具方法
 const getYearMontDay = date => {
-  let year = date.getFullYear();
-  let month = date.getMonth();
-  let day = date.getDate();
-  return { year, month, day };
+	let year = date.getFullYear();
+	let month = date.getMonth();
+	let day = date.getDate();
+	return {
+		year,
+		month,
+		day
+	};
 };
 const getDate = (year, month, day) => {
-  return new Date(year, month, day);
+	return new Date(year, month, day);
 };
 
 //对url 参数解析 a=1&b=2
 const parser = str => {
-  const obj = {};
-  str.replace(/([^&=]+)=([^&=]+)/g, function() {
-    console.log(...arguments);
-    obj[arguments[1]] = arguments[2];
-  });
-  return obj;
+	const obj = {};
+	str.replace(/([^&=]+)=([^&=]+)/g, function () {
+		console.log(...arguments);
+		obj[arguments[1]] = arguments[2];
+	});
+	return obj;
 };
 const stringify = obj => {
-  const arr = [];
-  for (let key in obj) {
-    arr.push(`${key}=${obj[key]}`);
-  }
-  return arr.join("&");
+	const arr = [];
+	for (let key in obj) {
+		arr.push(`${key}=${obj[key]}`);
+	}
+	return arr.join("&");
 };
 // console.log(parser(`a=1&b=2`))
 // console.log(stringify({ a: '1', b: '2' }))
@@ -32,34 +36,46 @@ const stringify = obj => {
 // export defalut 具体值
 
 const addNode = (node, parent) => {
-  parent.appendChild(node);
+	parent.appendChild(node);
 };
 const removeNode = node => {
-  node.parentNode.remove(node);
+	node.parentNode.remove(node);
 };
 const getDataByCallback = cb => {
-  setTimeout(() => {
-    cb({
-      name: "jw"
-    });
-  }, 1000);
+	setTimeout(() => {
+		cb({
+			name: "jw"
+		});
+	}, 1000);
 };
 const getDataByPromise = () => {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve({
-        name: "jw"
-      });
-    }, 2000);
-  });
+	return new Promise((resolve, reject) => {
+		setTimeout(() => {
+			resolve({
+				name: "jw"
+			});
+		}, 2000);
+	});
 };
+//下载
+const handleDownload = (file, name) => {
+	const blob = new Blob([file])
+	const a = document.createElement('a')
+	const src = window.URL.createObjectURL(blob)
+	a.download = name
+	a.href = src
+	document.body.appendChild(a)
+	a.click()
+	document.body.removeChild(a)
+}
 export {
-  getYearMontDay,
-  getDate,
-  parser,
-  stringify,
-  addNode,
-  removeNode,
-  getDataByCallback,
-  getDataByPromise
+	getYearMontDay,
+	getDate,
+	parser,
+	stringify,
+	addNode,
+	removeNode,
+	getDataByCallback,
+	getDataByPromise,
+	handleDownload
 };

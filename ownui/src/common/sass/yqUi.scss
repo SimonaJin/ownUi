@@ -267,3 +267,18 @@
 		font-size: 2rem;
 	}
 }
+//-------------------radio
+.yq-radio{
+	display: flex;
+	align-items: center;
+  overflow: hidden;
+	cursor: pointer;
+	user-select: none;
+	.yq-radio-icon{
+		@include border-radius(50%);
+		border:1px solid $border-color;
+		color: transparent;
+		display: block;
+    box-sizing: border-box;
+	}
+}

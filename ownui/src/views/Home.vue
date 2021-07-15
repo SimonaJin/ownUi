@@ -15,24 +15,22 @@ export default {
   computed: {},
   data() {
     return {
-			config: demoConfig.site,
-			baseSrc:demoConfig.build.site.publicPath,
-			iframeSrc:""
+      config: demoConfig.site,
+      baseSrc: demoConfig.build.site.publicPath,
+      iframeSrc: ""
     };
   },
   created() {
-    // console.log(location.pathname.replace(/\/index(\.html)?/, "/"));
-		// console.log(location.hash);
-		this.iframeSrc = location.hash.replace(/#/,this.baseSrc)
-		console.log(this.iframeSrc);
-		
-	},
-	watch:{
-		'$route.path'(val) {
-			this.iframeSrc = this.baseSrc+val
-			console.log(this.iframeSrc)
-		}
-	},
+		console.log('demoConfig',this.baseSrc)
+    this.iframeSrc = location.hash.replace(/#\/component/, this.baseSrc);
+    console.log(this.iframeSrc);
+  },
+  watch: {
+    "$route.path"(val) {
+      this.iframeSrc = this.baseSrc + val;
+      console.log(this.iframeSrc);
+    },
+  },
   methods: {},
 };
 </script>
